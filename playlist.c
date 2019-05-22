@@ -74,9 +74,11 @@ FILE* open_next_file(char* _files[], int _nfiles, int* _curfile) {
 
 		*_curfile = (*_curfile + 1) % _nfiles;
 
-		/* check for playlist wrap-around */
-		if (0 == *_curfile) 
-			last_played = 1;
+		/* check for playlist wrap-around 
+		   Commented it out loops the playlist endlessly making it better for 24/7 streaming
+		*/
+		/*if (0 == *_curfile) 
+			last_played = 1;*/
 
 		if (fp)
 			break;
